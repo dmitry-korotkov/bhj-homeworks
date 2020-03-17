@@ -5,8 +5,11 @@ modalMain.classList.add("modal_active");
 //Сделайте закрытие активного окна по нажатию на его элемент с классом modal__close
 const modalClose = document.querySelectorAll(".modal__close");
 const closeButton = Array.from(modalClose);
-for ( let buttons in closeButton ) {
-    modalClose[buttons].onclick = () => modalMain.classList.remove("modal_active");
+for ( let buttons of closeButton ) {
+    buttons.onclick = () =>  {
+        modalMain.classList.remove("modal_active");
+        modalSuccess.classList.remove("modal_active")
+    }  
 }
 //По нажатию на элемент с классом show-success покажите окно #modal_success
 const modalSuccess = document.getElementById("modal_success");
@@ -16,7 +19,7 @@ showSuccess.onclick = () => {
     modalMain.classList.remove("modal_active");
 }
 
-closeButton[2].onclick = () => modalSuccess.classList.remove("modal_active")
+
 
 
 
