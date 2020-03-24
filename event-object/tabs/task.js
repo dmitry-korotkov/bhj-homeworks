@@ -1,42 +1,19 @@
 let tabs = Array.from(document.querySelectorAll(".tab"));
 let tabContents = Array.from(document.querySelectorAll(".tab__content"));
-console.log(tabs);
+activeContent = 0;
 
-
-
-for(let i = 0; i < tabs.length; i++) {
-     index = i;
-}
 
 function toogle (index) {
-    if(tabs[index].classList.contains("tab_active")) {
-        tabs[index].classList.remove("tab_active")
-        tabContents[index].classList.remove(".tab__content")
-    } else {
-        tabs[index].classList.add("tab_active")
-        tabContents[index].classList.add(".tab__content")
-    }  
+    tabs[index].classList.toggle("tab_active")
+    tabContents[index].classList.toggle("tab__content_active")
 }
 
-tabs[index].addEventListener("click", toogle);
 
-
-
-
-
-for(let tab of tabs) {
-    function toogle () {
-        if(tab.classList.contains("tab_active")) {
-            tab.classList.remove("tab_active")
-        } else {
-            tab.classList.add("tab_active")
-        }
-        
-    
+for (let i = 0; i < tabs.length; i++) {
+    function getActive () {
+        toogle(activeContent);
+        activeContent = i;
+        toogle(activeContent);
     }
-    tab.addEventListener("click", toogle);
+    tabs[i].addEventListener("click", getActive);
 }
-
-
-
-
