@@ -17,6 +17,19 @@ class Game {
   }
 
   registerEvents() {
+
+    const keyComparison = e => {
+      let currentKey = this.currentSymbol.textContent.toLowerCase();
+      let enterKey = e.key.toLowerCase();
+      
+      if (currentKey === enterKey) {
+        this.success();
+      } else {
+        this.fail();
+      }
+    }
+
+    document.addEventListener("keydown", keyComparison);
     /*
       TODO:
       Написать обработчик события, который откликается
