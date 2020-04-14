@@ -26,7 +26,7 @@ tasksAddButton.addEventListener("click", (event) => {
     }
     
 })
-tasksList.addEventListener('click', (e) => {
+document.addEventListener('click', (e) => {
     if (e.target.classList.contains('task__remove')) {
         e.target.closest('.task').remove();
     }
