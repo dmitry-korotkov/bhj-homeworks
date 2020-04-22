@@ -10,5 +10,10 @@ clearButton.addEventListener("click",(e)=> {
     localStorage.editorValue = editor.value;
 });
 
-
-    editor.value = localStorage.editorValue;
+window.onload = () => {
+    if(localStorage.editorValue === undefined) {
+        editor.value = null
+    } else {
+        editor.value = localStorage.editorValue;
+    }
+}
